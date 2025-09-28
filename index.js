@@ -12,7 +12,11 @@ if (!GOOGLE_API_KEY) {
 }
 
 const app = express();
-app.use(cors());
+
+app.use(cors({
+  origin: "https://abhinav84094.github.io"
+}));
+
 app.use(express.json());
 
 const ai = new GoogleGenAI({ apiKey: GOOGLE_API_KEY });
